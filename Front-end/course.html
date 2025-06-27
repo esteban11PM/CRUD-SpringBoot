@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fitness - Fitness Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid header-top">
+        <div class="nav-shaps-2"></div>
+        <div class="container d-flex align-items-center">
+            <div class="d-flex align-items-center h-100">
+                <a href="#" class="navbar-brand" style="height: 125px;">
+                    <h1 class="text-primary mb-0"><i class="fas fa-hand-rock me-2"></i> GYM BOY</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+            </div>
+            <div class="w-100 h-100">
+                <div class="topbar px-0 py-2 d-none d-lg-block" style="height: 45px;">
+                    <div class="row gx-0 align-items-center"></div>
+                </div>
+                <div class="nav-bar px-0 py-lg-0" style="height: 80px;">
+                    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
+                        <a href="#" class="navbar-brand-2">
+                            <h1 class="text-primary mb-0"><i class="fas fa-hand-rock me-2"></i> Fitness</h1>
+                            <!-- <img src="img/logo.png" alt="Logo"> -->
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <div class="navbar-nav mx-0 mx-lg-auto">
+                                <a href="index.html" class="nav-item nav-link ">Home</a>
+                                <a href="contact.html" class="nav-item nav-link">Registro al GYM</a>
+                                <a href="blog.html" class="nav-item nav-link">Suscripciones</a>
+                                <a href="course.html" class="nav-item nav-link active">Clases</a>
+                                <a href="instructors.html" class="nav-item nav-link">Instructores</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                        <span class="dropdown-toggle">Mas del GYM</span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a href="feature.html" class="dropdown-item">Equipos del GYM</a>
+                                        <a href="team.html" class="dropdown-item">Our team</a>
+                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                        <a href="registros.html" class="dropdown-item">Registros</a>
+                                        <a href="404.html" class="dropdown-item">404 Page</a>
+                                    </div>
+                                </div>
+                                <div class="nav-btn ps-3">
+                                    <div class=" btn-md-square"></div>
+                                    <a href="#" class="ms-lg-3"></a>
+                                </div>
+                                <div class="nav-shaps-1"></div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Nuestras Clases</h4>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Team Start -->
+    <div class="container-fluid team py-5" style="background-color: #1a1a1a;">
+        <div class="container py-5">
+            <!-- Título -->
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h3 class="text-primary">Estas Son Todas las Clases Disponibles</h3>
+            </div>
+
+            <!-- Controles CRUD -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <button id="new-class-btn" class="btn btn-primary">+ Agregar Clase</button>
+                <div class="input-group" style="max-width:300px;">
+                    <input id="filter-specialty-input" type="text" class="form-control"
+                        placeholder="Filtrar por tipo de clase">
+                    <button id="filter-specialty-btn" class="btn btn-outline-light">Buscar</button>
+                </div>
+            </div>
+
+            <!-- Grid Dinámico -->
+            <div class="row gy-5 gy-lg-4 gx-4" id="class-grid-body">
+                <!-- Aquí se inyectan dinámicamente las fichas -->
+            </div>
+
+            <!-- Ver más / Ver menos -->
+            <div class="text-center mt-4">
+                <button id="see-more-class-btn" class="btn btn-outline-light" style="display:none;">
+                    Ver más
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Modal Clase -->
+    <div class="modal fade" id="class-modal" tabindex="-1" aria-labelledby="classModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="classModalLabel">Clase</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="class-form" class="row g-3">
+                        <input type="hidden" name="id_class" />
+                        <div class="col-md-6">
+                            <label for="class-type" class="form-label">Tipo de Clase</label>
+                            <input name="type" type="text" class="form-control" id="class-type" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="class-capacity" class="form-label">Capacidad</label>
+                            <input name="max_capacity" type="number" class="form-control" id="class-capacity" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="class-schedule" class="form-label">Horario</label>
+                            <input name="schedule" type="datetime-local" class="form-control" id="class-schedule"
+                                required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="class-duration" class="form-label">Duración</label>
+                            <input name="duration" type="time" class="form-control" id="class-duration" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="instructor-select" class="form-label">Instructor</label>
+                            <select class="form-select" id="instructor-select" name="instructor_id" required>
+                                <!-- opciones dinámicas -->
+                            </select>
+                        </div>
+                        <div class="col-md-12 text-end">
+                            <button type="submit" class="btn btn-primary">Guardar Clase</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Registro a Clase -->
+    <div class="modal fade" id="class-reg-modal" tabindex="-1" aria-labelledby="classRegLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="classRegLabel">¿Quién eres?</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="client-filter" class="form-label">Filtrar por nombre</label>
+                        <input type="text" id="client-filter" class="form-control" placeholder="Escribe para buscar...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="client-select" class="form-label">Selecciona tu nombre</label>
+                        <select id="client-select" class="form-select"></select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                    <button id="confirm-register-btn" class="btn btn-success">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Back to Top -->
+    <div class="back-to-top">
+        <a href="#" class="btn"><i class="fa fa-arrow-up"></i></a>
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script type="module" src="js/Mains/mainClass.js"></script>
+</body>
+
+</html>
