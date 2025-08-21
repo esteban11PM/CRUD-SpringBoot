@@ -4,8 +4,8 @@ import { INSTRUCTOR_BASE_URL } from "./endpoints/endPoints";
 export interface IInstructor {
     id_instructor?: number;
     name: string;
-    specialties: string;      // POST/PUT usa este campo
-    specialities?: string;    // GET puede traer duplicado; lo toleramos
+    specialties: string;      
+    specialities?: string;
 }
 
 export interface InstructorOption { id: number; label: string }

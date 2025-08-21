@@ -8,7 +8,6 @@ export async function getMembershipOptions(): Promise<MembershipOption[]> {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
-    // Soporta array directo o envuelto en {content:[]} / {data:[]}
     const arr: any[] = Array.isArray(data)
         ? data
         : Array.isArray(data?.content)
@@ -21,7 +20,7 @@ export async function getMembershipOptions(): Promise<MembershipOption[]> {
     const options = arr
         .map((m: any) => {
             const id = m.id_membership ?? m.id ?? null;
-            const label = m.name ?? null; // name viene en el SELECT de Hibernate
+            const label = m.name ?? null;
             if (id == null || !label) return null;
             return { id: Number(id), label: String(label) } as MembershipOption;
         })

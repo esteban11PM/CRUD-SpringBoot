@@ -2,10 +2,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { Text } from 'react-native';
 import ClientStack from './ClientStack';
 import ClassStack from './ClassStack';
 import type { RootTabParamList } from './types';
 import InstructorStack from './InstructorStack';
+import ButtonStack from './BottomStack';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -46,6 +48,11 @@ export default function MainNavigator() {
                         <AntDesign name="user" size={size} color={color} />
                     ),
                 }}
+            />
+            <Tab.Screen
+                name="RatingsTab"
+                component={ButtonStack}
+                options={{ title: "Reseñas", tabBarIcon: () => <Text>⭐</Text> }}
             />
         </Tab.Navigator>
     );

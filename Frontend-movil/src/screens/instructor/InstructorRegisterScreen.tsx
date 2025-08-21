@@ -30,7 +30,7 @@ export default function InstructorRegisterScreen() {
         if (!validate()) return;
         try {
             await addInstructor({ name: form.name.trim(), specialties: form.specialties.trim() });
-            Alert.alert("✅", "Instructor creado");
+            Alert.alert("Instructor creado");
             navigation.goBack();
         } catch (e: any) {
             Alert.alert("Error", e.message || "No se pudo crear");

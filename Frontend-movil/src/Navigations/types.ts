@@ -1,5 +1,3 @@
-// src/navigation/types.ts
-
 // Stack de clientes
 export type ClientStackParamList = {
     ClientList: undefined;
@@ -19,11 +17,16 @@ export type RootTabParamList = {
     Clientes: undefined;
     Clases: undefined;
     Instructores: undefined;
-    // Agrega más módulos aquí (e.g., Instructores, Pagos, etc.)
+    RatingsTab: undefined;
 };
 // Stack de instructores
 export type InstructorStackParamList = {
     InstructorList: undefined;
     InstructorRegister: { mode: "create" | "edit"; id?: number };
     InstructorUpdate: { id: number };
+};
+
+export type ButtonStackParamList = {
+    RatingList: undefined;
+    RatingForm: { mode: "create" };
 };

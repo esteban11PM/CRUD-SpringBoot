@@ -59,7 +59,6 @@ const normalize = (
 
     const class_type = r?.class_type ?? r?.class?.type ?? undefined;
 
-    // id estable para listas (si no viene del backend, generamos uno sintético)
     const id: number =
         rawId != null
             ? Number(rawId)
@@ -76,7 +75,6 @@ const normalize = (
     };
 };
 
-/** De-duplica por (class_id, client_id, client_full_name) */
 const dedupe = (items: IClassRegistration[]) => {
     const seen = new Set<string>();
     return items.filter((r) => {
@@ -87,15 +85,6 @@ const dedupe = (items: IClassRegistration[]) => {
     });
 };
 
-/**
- * Devuelve inscripciones para una clase.
- * Intenta rutas comunes:
- *  1) /ClassRegistration/class/{id}
- *  2) /ClassRegistration?class_id={id}
- *  3) /ClassRegistration (y filtra)
- *
- * Siempre normaliza y asegura claves únicas para listas.
- */
 export const getRegistrationsByClass = async (
     classId: number
 ): Promise<IClassRegistration[]> => {
@@ -115,10 +104,8 @@ export const getRegistrationsByClass = async (
             .filter(Boolean) as IClassRegistration[];
         return dedupe(normed.filter((r) => r.class_id === classId));
     } catch {
-        // sigue con la siguiente ruta
     }
 
-    // 2) ?class_id={id}
     try {
         const data = await json<any[]>(`${CLASS_REGISTRATION_BASE_URL}?class_id=${classId}`);
         const arr: any[] =

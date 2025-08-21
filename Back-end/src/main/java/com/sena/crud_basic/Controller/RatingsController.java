@@ -56,7 +56,7 @@ public class RatingsController {
     }
 
     // PUT
-    @PutMapping("/")
+    @PutMapping("/{id}")
     public ResponseEntity<Object> updateRating(@RequestBody requestRatingDTO dto) {
         try {
             ratingsService.update(dto);
