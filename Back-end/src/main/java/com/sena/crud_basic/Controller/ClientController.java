@@ -52,7 +52,7 @@ public class ClientController {
         // }
     }
 
-    @PutMapping("/")
+    @PutMapping("/{id}")
     public ResponseEntity<Object> updateClient(@RequestBody requestClientDTO dto) {
         try {
             clientService.update(dto);
