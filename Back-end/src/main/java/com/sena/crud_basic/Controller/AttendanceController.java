@@ -56,7 +56,7 @@ public class AttendanceController {
     }
 
     // PUT
-    @PutMapping("/")
+    @PutMapping("/{id}")
     public ResponseEntity<Object> updateAttendance(@RequestBody requestAttendanceDTO dto) {
         try {
             attendanceService.update(dto);

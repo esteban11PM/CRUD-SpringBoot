@@ -56,7 +56,7 @@ public class ClassController {
     }
 
     // PUT
-    @PutMapping("/")
+    @PutMapping("/{id}")
     public ResponseEntity<Object> updateClass(@RequestBody requestClassDTO dto) {
         try {
             classService.update(dto);

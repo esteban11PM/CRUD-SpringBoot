@@ -5,6 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import ClientStack from './ClientStack';
 import ClassStack from './ClassStack';
 import type { RootTabParamList } from './types';
+import InstructorStack from './InstructorStack';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -36,11 +37,16 @@ export default function MainNavigator() {
                     ),
                 }}
             />
-            {/*
-        Agrega más módulos aquí:
-        <Tab.Screen name="Instructores" component={InstructorStack} ... />
-        <Tab.Screen name="Pagos" component={PaymentStack} ... />
-      */}
+            <Tab.Screen
+                name="Instructores"
+                component={InstructorStack}
+                options={{
+                    tabBarLabel: "Instructores",
+                    tabBarIcon: ({ color, size }) => (
+                        <AntDesign name="user" size={size} color={color} />
+                    ),
+                }}
+            />
         </Tab.Navigator>
     );
 }

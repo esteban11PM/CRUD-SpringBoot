@@ -51,7 +51,7 @@ public class InstructorController {
     }
 
     // constrolador para actualizar un registro en la base de datos
-    @PutMapping("/")
+    @PutMapping("/{id}")
     public ResponseEntity<Object> update(@RequestBody requestIntructorDTO instructorDTO) {
         try {
             instructorService.update(instructorDTO);
